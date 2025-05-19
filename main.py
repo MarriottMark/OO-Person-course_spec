@@ -42,23 +42,31 @@ class Parent(Person):
 
 class Subject():
     def __init__(self):
-        return
+            return
+
     
 
 class Teacher():
-    def __init__(self, Title):
+    def __init__(self, Title, LastName):
+        self.LastName = LastName
         self.Title = Title
         self.Subject = []
-        
+    
+
     def ShowClasses(self):
         for sub in self.Subject:
             print(sub)
     
     def EnrollClass(self, SubjectName):
         self.Subject.append(SubjectName)
+    
+    def ShowName(self):
+        print(self.Title + " " + self.LastName)
+
+
 
 # Main program
- 
+print("Student: \n")
 s1 = Student("Troy", "Harcoan", "6", "Heber")
 s1.EnrollClass("Maths Advanced")
 s1.EnrollClass("English Advanced")
@@ -68,12 +76,13 @@ s1.EnrollClass("Software Engineering")
 s1.EnrollClass("Biology")
 s1.ShowClasses()
 s1.PrintFullName()
-print("p1")
+print("Dad: \n")
 p1 = Parent("Makes lights")
 p1.SetAlumni(True)
 p1.ShowOccupation()
 p1.DisplayAlumni()
-print("T1")
-t1 = Teacher("Mr.")
+print("Teacher: \n")
+t1 = Teacher("Mr.", "Smith")
 t1.EnrollClass("Maths Advanced")
 t1.ShowClasses()
+t1.ShowName()
